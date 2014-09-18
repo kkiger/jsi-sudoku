@@ -1,7 +1,14 @@
-module.exports.scanRow = function(puzzle, row, n) {
+var Puzzle = function(puzzleStirng) {
+
+};
+
+Puzzle.prototype.scanRow = function(row, n) {
   return true;
 };
 
-module.exports.scanColumn = function(puzzle, column, n) {
+Puzzle.prototype.scanColumn = function(column, n) {
   return false;
 };
+
+
+module.exports = Puzzle;
