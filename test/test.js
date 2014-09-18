@@ -18,4 +18,13 @@ describe('scan numbers', function(){
     expect(result).to.eql(false);
   });
 
+  it('finds the contents of a specific row', function() {
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    expect(puzzle.getRowContents(0)).to.eql('158 2  6 ');
+  });
+   it('finds the contents of a specific row', function() {
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    expect(puzzle.getRowContents(1)).to.eql('2   8  9 ');
+  });
+
 });
