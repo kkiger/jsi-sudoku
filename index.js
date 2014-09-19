@@ -44,4 +44,23 @@ Puzzle.prototype.scanColumn = function(column, n) {
 };
 
 
+Puzzle.prototype.getBoxContents = function(boxNumber) {
+  // TODO: this code is bad code written by wbyoung.
+  // it could be far more readable & understandable.
+  var row = Math.floor(boxNumber / 3) * 3;
+  var col = (boxNumber % 3) * 3;
+  var result =
+    this._puzzle.substr((row + 0) * 9 + col, 3) +
+    this._puzzle.substr((row + 1) * 9 + col, 3) +
+    this._puzzle.substr((row + 2) * 9 + col, 3);
+  return result;
+};
+
+Puzzle.prototype.scanBox = function(box, n) {
+  var contents = this.getBoxContents(box);
+  var index = contents.indexOf(n.toString());
+  return (index !== -1);
+};
+
+
 module.exports = Puzzle;

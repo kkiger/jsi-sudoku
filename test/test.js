@@ -34,6 +34,27 @@ describe('scan numbers', function(){
     expect(result).to.eql(true);
   });
 
+  it('check if there is a 1 in box 0', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    var box = 0;
+    var result = puzzle.scanBox(box, 1);
+    expect(result).to.eql(true);
+  });
+
+  it('check if there is a 1 in box 2', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    var box = 2;
+    var result = puzzle.scanBox(box, 1);
+    expect(result).to.eql(false);
+  });
+
+  it('check if there is a 1 in box 8', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    var box = 8;
+    var result = puzzle.scanBox(box, 1);
+    expect(result).to.eql(true);
+  });
+
   it('finds the contents of a specific row', function() {
     var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
     expect(puzzle.getRowContents(0)).to.eql('158 2  6 ');
@@ -60,6 +81,20 @@ describe('scan numbers', function(){
     expect(puzzle.getColumnContents(8)).to.eql('  2    83');
   });
 
+  it('finds the contents of a specific box', function() {
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    expect(puzzle.getBoxContents(0)).to.eql('1582   3 ');
+  });
+
+  it('finds the contents of a specific box', function() {
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    expect(puzzle.getBoxContents(8)).to.eql(' 2   8413');
+  });
+
+  it('finds the contents of a specific box', function() {
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    expect(puzzle.getBoxContents(5)).to.eql('   7   5 ');
+  });
 });
 
 
