@@ -27,6 +27,13 @@ describe('scan numbers', function(){
     expect(result).to.eql(false);
   });
 
+  it('check if there is a 8 in column 8', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    var column = 8;
+    var result = puzzle.scanColumn(column, 8);
+    expect(result).to.eql(true);
+  });
+
   it('finds the contents of a specific row', function() {
     var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
     expect(puzzle.getRowContents(0)).to.eql('158 2  6 ');

@@ -38,8 +38,9 @@ Puzzle.prototype.getColumnContents = function(columnNumber) {
 };
 
 Puzzle.prototype.scanColumn = function(column, n) {
-  // var column = this.getColumnContents(column);
-  return false;
+  var contents = this.getColumnContents(column);
+  var index = contents.indexOf(n.toString());
+  return (index !== -1);
 };
 
 
