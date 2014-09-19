@@ -2,6 +2,7 @@ var Puzzle = function(puzzleString) {
   this._puzzle = puzzleString;
 };
 
+var _ = require('lodash');
 /**
  * [getRowContents description]
  * @param  {[type]} rowNumber [description]
@@ -30,15 +31,14 @@ Puzzle.prototype.scanRow = function(row, n) {
  * @return {String}              [description]
  */
 Puzzle.prototype.getColumnContents = function(columnNumber) {
-  var arraysAreBetter = [];
-
-  return arraysAreBetter.join('');
-
-  return this._puzzle.substr((columnNumber * 9), 9);
+  var newArray = _.range(columnNumber, 81, 9).map(function(index) { 
+    return this._puzzle[index];
+  }.bind(this));
+  return newArray.join('');
 };
 
 Puzzle.prototype.scanColumn = function(column, n) {
-  var column = this.getColumnContents(column);
+  // var column = this.getColumnContents(column);
   return false;
 };
 
