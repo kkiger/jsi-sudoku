@@ -37,15 +37,22 @@ describe('scan numbers', function(){
     expect(puzzle.getRowContents(1)).to.eql('2   8  9 ');
   });
 
+   it('finds the contents of a specific row', function() {
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    expect(puzzle.getRowContents(8)).to.eql(' 7  9 413');
+  });
+
+   //added test for checking that the column function works
+  it('finds the contents of a specific column', function() {
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    expect(puzzle.getColumnContents(7)).to.eql('69   52 1');
+  });
+  
+  it('finds the contents of a specific column', function() {
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    expect(puzzle.getColumnContents(8)).to.eql('  2    83');
+  });
+
 });
 
-describe('whit has an example', function() {
-  it('shows that example', function() {
-    var _ = require('lodash');
-    var string = '     h    e    l    l    o';
-    _.range(0, 30, 5).forEach(function(numberGeneratedByTheRange) {
-      var index = numberGeneratedByTheRange;
-      console.log(string[index]);
-    });
-  });
-});
+
