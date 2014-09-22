@@ -64,3 +64,5 @@ Puzzle.prototype.scanBox = function(box, n) {
 
 
 module.exports = Puzzle;
+
+

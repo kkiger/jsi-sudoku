@@ -98,12 +98,44 @@ describe('scan numbers', function(){
 });
 
 describe('solve puzzle', function(){
-  it('give missing numbers for a puzzle', function(){
-    // we have a 1
-    // we want to scan the row and see if there is another 1
+  it.skip('find the value at a particular coordinate', function(){
     var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
-    var result = puzzle.solvePuzzle(;
+    // (row, column) the findCoordinate will have to use the get row and get column function
+    var result = puzzle.findCoordinate(8,8);
+    expect(result).to.eql('3');
+  });
+  it.skip('find the value at a particular coordinate', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    var result = puzzle.findCoordinate(1,8);
+    expect(result).to.eql(' ');
+  });
+  it.skip('read the value of the coordinate and determine if it is blank', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    var coordinate = puzzle.findCoordinate(1,8);
+    var result = readValue(coordinate);
+    expect(result).to.eql(true);
+  })
+  it.skip('read the value of the coordinate and determine if it is blank', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    var coordinate = puzzle.findCoordinate(8,8);
+    var result = readValue(coordinate);
+    expect(result).to.eql(false);
+  });
+  it.skip('compare the row, column and box to find potential solutions', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    // (row, column, box)
+    var rusult = puzzle.compareNumbers(6,8,8);
+    expect(result).to.eql([5,6,7]);
+  });
+  it.skip('compare the row, column and box to find potential solutions', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    var rusult = puzzle.compareNumbers(0,8,2);
+    expect(result).to.eql([4,7]);
+  });
+// this is the last test
+  it.skip('give missing numbers for a puzzle', function(){
+    var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
+    var result = puzzle.solvePuzzle();
     expect(result).to.eql('158924367247683195561748239394562781782319654419837526623451978875296413');
   });
-  
-
+});  
