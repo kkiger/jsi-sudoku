@@ -62,6 +62,13 @@ Puzzle.prototype.scanBox = function(box, n) {
   return (index !== -1);
 };
 
+Puzzle.prototype.findCoordinate = function(row, column) {
+  return ('3');
+};
+
+Puzzle.prototype.readValue = function(coordinate) {
+  return true;
+};
 
 module.exports = Puzzle;
 

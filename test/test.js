@@ -98,7 +98,7 @@ describe('scan numbers', function(){
 });
 
 describe('solve puzzle', function(){
-  it.skip('find the value at a particular coordinate', function(){
+  it('find the value at a particular coordinate', function(){
     var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
     // (row, column) the findCoordinate will have to use the get row and get column function
     var result = puzzle.findCoordinate(8,8);
@@ -112,7 +112,7 @@ describe('solve puzzle', function(){
   it.skip('read the value of the coordinate and determine if it is blank', function(){
     var puzzle = new Puzzle('158 2  6 2   8  9  3  7 8 2 6 74      4 6 7      19 5 4 9 3  2  2  5   8 7  9 413');
     var coordinate = puzzle.findCoordinate(1,8);
-    var result = readValue(coordinate);
+    var result = readValue();
     expect(result).to.eql(true);
   })
   it.skip('read the value of the coordinate and determine if it is blank', function(){
